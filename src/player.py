@@ -6,7 +6,8 @@ class Player:
         self.name = name
         self.current_room = current_room
     def travel(self, direction):
-        if getattr(player.current_room, f"{direction}_to") is not None:
-            player.current_room = if getattr(player.current_room, f"{direction}_to")
+        if getattr(self.current_room, f"{direction}_to") is not None:
+            self.current_room = getattr(self.current_room, f"{direction}_to")
+            print(self.current_room)
         else:
             print("You can not move in that direction")

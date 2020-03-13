@@ -38,6 +38,7 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 player = Player(input("Please enter your name: "), room['outside'])
+print(player.current_room)
 
 print(f"Hello, {player.name}")
 # Write a loop that:
@@ -65,25 +66,8 @@ while True:
     if cmd == "q":
         print("Goodbye!")
         exit(0)
-    elif cmd == "n":
-        if player.current_room.n_to is not None:
-            player.current_room = player.current_room.n_to
-        else:
-            print("You can not move in that direction")
-    elif cmd == "s":
-        if player.current_room.n_to is not None:
-            player.current_room = player.current_room.n_to
-        else:
-            print("You can not move in that direction")
-    elif cmd == "e":
-        if player.current_room.n_to is not None:
-            player.current_room = player.current_room.n_to
-        else:
-            print("You can not move in that direction")
-    elif cmd == "w":
-        if player.current_room.n_to is not None:
-            player.current_room = player.current_room.n_to
-        else:
-            print("You can not move in that direction")
+    elif cmd == in ("n","s","e","w")
+        player.travel(cmd)
+        # north
     else:
         print("I did not understand that command")
